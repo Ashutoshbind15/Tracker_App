@@ -1,0 +1,51 @@
+.nav {
+  display: flex;
+  padding: 3rem 2.5rem 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 2.6rem;
+}
+
+.img {
+  height: 3.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 11rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  /* background-color: gray; */
+  border-radius: 10rem;
+  font-size: 2rem;
+  transition: all 0.2s;
+  margin: 0 1rem;
+}
+
+.nav a:hover {
+  background-color: #2e59c9;
+  color: white;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.navend {
+  display: flex;
+  align-items: center;
+  margin-right: 11rem;
+}
