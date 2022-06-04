@@ -23,6 +23,11 @@
 .nav a {
   text-decoration: none;
   color: black;
+}
+
+.navend a {
+  text-decoration: none;
+  color: black;
   display: inline-block;
   padding: 1.2rem 3rem;
   /* background-color: gray; */
@@ -32,7 +37,7 @@
   margin: 0 1rem;
 }
 
-.nav a:hover {
+.navend a:hover {
   background-color: #2e59c9;
   color: white;
 }

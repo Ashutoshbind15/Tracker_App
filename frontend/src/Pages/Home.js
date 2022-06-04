@@ -14,9 +14,7 @@ const Home = () => {
             </div>
 
             <Link to="/tasks">
-              <div className={classes.button}>
-                <button>Browse</button>
-              </div>
+              <button className={classes.button}>Browse</button>
             </Link>
           </div>
           <div className={classes.imgC}>
