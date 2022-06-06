@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   tasks: [],
+  task: null,
 };
 
 const TaskSlice = createSlice({
@@ -10,6 +11,15 @@ const TaskSlice = createSlice({
   reducers: {
     get(state, action) {
       state.tasks = action.payload;
+    },
+    create(state, action) {
+      state.tasks.push(action.payload);
+    },
+    getOneTask(state, action) {
+      state.task = action.payload;
+    },
+    decPomo(state, action) {
+      state.task.time -= 1;
     },
   },
 });

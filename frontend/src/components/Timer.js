@@ -1,11 +1,15 @@
 import React from "react";
-import Progress from "./components/Progress";
+import Progress from "./Progress";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { TaskActions } from "../reducers/TaskReducer";
 
 const Timer = () => {
+  const pcount = useSelector((state) => state.task?.task.time);
+  const dispatch = useDispatch();
+
   const [count, setCount] = useState(100);
   const [isActive, setIsActive] = useState(false);
-  const [pcount, setPcount] = useState(5);
 
   useEffect(() => {
     let timer = null;
@@ -22,6 +26,14 @@ const Timer = () => {
     };
   }, [isActive]);
 
+  useEffect(() => {
+    if (count <= -5) {
+      dispatch(TaskActions.decPomo());
+      setIsActive(false);
+      setCount(100);
+    }
+  }, [dispatch, count]);
+
   const timerStarter = () => {
     setIsActive(true);
   };
@@ -33,12 +45,6 @@ const Timer = () => {
   const stopHandler = () => {
     setIsActive(false);
   };
-
-  if (count <= -5) {
-    setIsActive(false);
-    setCount(100);
-    setPcount((prev) => prev - 1);
-  }
 
   return (
     <>

@@ -1,22 +1,27 @@
 import React from "react";
 import classes from "./Task.module.css";
+import { Link } from "react-router-dom";
 
-const Task = () => {
+const Task = ({ name, time, priority, createdAt, id }) => {
   return (
     <div className={classes.task}>
       <div className={classes.tdetails}>
-        <div>Task1</div>
-        <div>3 hrs</div>
+        <div>{name}</div>
+        <div>{time}</div>
       </div>
       <div className={classes.tdetails}>
-        <div>date</div>
-        <div>Priority: H</div>
+        <div>{createdAt}</div>
+        <div>Priority: {priority}</div>
       </div>
       <div className={classes.tdetails}>
-        <div>Pomodoro : 3</div>
+        <div>Pomodoro : {time * 2}</div>
       </div>
       <hr />
-      <button>Start</button>
+      <div className={classes.tend}>
+        <Link to={`/tasks/${id}`} className={classes.link}>
+          Start
+        </Link>
+      </div>
     </div>
   );
 };
