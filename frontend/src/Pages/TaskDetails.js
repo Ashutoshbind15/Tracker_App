@@ -19,7 +19,9 @@ const TaskDetails = () => {
 
   return (
     <div className={classes.cont}>
-      <Timer />
+      {task.time > 0 && <h1>Time left: {task.time}</h1>}
+      {task.time === 0 && <h1>Completed!</h1>}
+      {task.time > 0 && <Timer id={id} />}
     </div>
   );
 };

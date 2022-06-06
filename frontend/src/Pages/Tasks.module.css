@@ -6,8 +6,24 @@
   margin-top: 1rem;
 }
 
-.list {
+.type_btn {
+  margin: 2rem;
+  width: 15rem;
+  padding: 1.7rem 0;
+  border-radius: 1.5rem;
+}
+
+.type_btn:hover {
+  cursor: pointer;
+  background-color: #ababab;
+  color: white;
+}
+
+.left {
   width: 70%;
+}
+
+.list {
   display: flex;
   flex-wrap: wrap;
 }
@@ -16,7 +32,7 @@
   margin-top: 3rem;
 }
 
-.form {
+.right {
   font-size: 1.6rem;
   width: 30%;
   padding: 10rem 4rem;

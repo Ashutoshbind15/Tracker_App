@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   tasks: [],
   task: null,
+  completedTasks: [],
+  ptime: 0.5,
 };
 
 const TaskSlice = createSlice({
@@ -19,7 +21,16 @@ const TaskSlice = createSlice({
       state.task = action.payload;
     },
     decPomo(state, action) {
-      state.task.time -= 1;
+      if (state.task.time > state.ptime) {
+        state.task.time -= state.ptime;
+      } else {
+        state.task.isCompleted = true;
+        state.task.time -= state.ptime;
+        state.completedTasks.push(state.task);
+      }
+    },
+    changePomoTime(state, action) {
+      state.ptime = action.payload;
     },
   },
 });
