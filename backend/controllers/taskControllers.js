@@ -22,3 +22,8 @@ export const createOne = catchAsync(async (req, res) => {
   const task = await Task.create(req.body);
   res.status(200).json(task);
 });
+
+export const deleteOne = catchAsync(async (req, res) => {
+  const task = await Task.findByIdAndDelete(req.params.id);
+  res.status(200).json(task);
+});

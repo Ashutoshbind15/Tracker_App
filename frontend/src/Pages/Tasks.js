@@ -6,11 +6,11 @@ import { useDispatch } from "react-redux";
 import { createTask, getAll } from "../actions/TaskActions";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Button } from "@mui/material";
 
 const Tasks = () => {
   const tasks = useSelector((state) => state.task.tasks);
   const completedTasks = tasks.filter((el) => el.isCompleted);
-  console.log(completedTasks);
   const unCompleteTasks = tasks.filter((el) => !el.isCompleted);
   const defaultState = {
     name: "",
@@ -31,7 +31,6 @@ const Tasks = () => {
 
   const submissionHandler = (e) => {
     e.preventDefault();
-    console.log(userInputState);
     dispatch(createTask(userInputState));
     setUserInputState();
   };
@@ -93,7 +92,9 @@ const Tasks = () => {
               <option value="L">L</option>
             </select>
           </div>
-          <button onClick={submissionHandler}>Submit</button>
+          <Button variant="contained" size="large" onClick={submissionHandler}>
+            Submit
+          </Button>
         </form>
       </div>
     </div>

@@ -11,12 +11,17 @@ export const getTask = (id) => async (dispatch) => {
   dispatch(TaskActions.getOneTask(data));
 };
 
-export const decTimer = (id, payload) => async (dispatch) => {
+export const EditTask = (id, payload) => async (dispatch) => {
   const { data } = await axios.patch(`/tasks/${id}`, payload);
-  dispatch(TaskActions.decPomo());
+  dispatch(TaskActions.editTask(data));
 };
 
 export const createTask = (pload) => async (dispatch) => {
   const { data } = await axios.post("/tasks", pload);
   dispatch(TaskActions.create(data));
+};
+
+export const deleteTask = (id) => async (dispatch) => {
+  const { data } = await axios.delete(`/tasks/${id}`);
+  dispatch(TaskActions.deleteOne(data._id));
 };

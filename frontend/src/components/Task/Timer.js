@@ -1,8 +1,9 @@
 import React from "react";
-import Progress from "./Progress";
+import Progress from "../UI/Progress";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decTimer } from "../actions/TaskActions";
+import { EditTask } from "../../actions/TaskActions";
+import classes from "./Timer.module.css";
 
 const Timer = ({ id }) => {
   const time = useSelector((state) => state.task?.task.time);
@@ -32,9 +33,9 @@ const Timer = ({ id }) => {
   useEffect(() => {
     if (count <= -1) {
       if (pcount === 1) {
-        dispatch(decTimer(id, { time: time - pduration, isCompleted: true }));
+        dispatch(EditTask(id, { time: time - pduration, isCompleted: true }));
       } else {
-        dispatch(decTimer(id, { time: time - pduration }));
+        dispatch(EditTask(id, { time: time - pduration }));
       }
       setIsActive(false);
       setCount(initialCount);
@@ -54,13 +55,14 @@ const Timer = ({ id }) => {
   };
 
   return (
-    <>
-      <h2>Pomodoros: {pcount}</h2>
-      <button onClick={timerStarter}>Start</button>
-      <button onClick={stopHandler}>Stop</button>
-      <button onClick={resetter}>Reset</button>
+    <div className={classes.timer}>
       <Progress value={(count / (pduration * 60 * 60)) * 100} />
-    </>
+      <div className={classes.actions}>
+        <button onClick={timerStarter}>Start</button>
+        <button onClick={stopHandler}>Stop</button>
+        <button onClick={resetter}>Reset</button>
+      </div>
+    </div>
   );
 };
 
