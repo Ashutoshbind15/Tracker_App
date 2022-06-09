@@ -52,6 +52,7 @@ const TaskDetails = () => {
             <h2>{task.name}</h2>
             <h3>{task.priority}</h3>
           </div>
+          <h3>Total time: {task.totalTime}</h3>
           {!task.isCompleted && <h3>Time left: {task.time}</h3>}
           {!task.isCompleted && (
             <div className={classes.pomo}>

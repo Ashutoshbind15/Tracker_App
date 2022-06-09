@@ -4,6 +4,7 @@ const taskSchema = new mongoose.Schema(
   {
     name: String,
     time: Number,
+    totalTime: Number,
     priority: {
       type: String,
       enum: ["H", "M", "L"],

@@ -54,8 +54,10 @@ const Tasks = () => {
                 createdAt={el.createdAt}
                 priority={el.priority}
                 time={el.time}
+                totalTime={el.totalTime}
                 key={el._id}
                 id={el._id}
+                isCompleted={el.isCompleted}
               />
             ))}
 
@@ -65,9 +67,11 @@ const Tasks = () => {
                 name={el.name}
                 createdAt={el.createdAt}
                 priority={el.priority}
+                totalTime={el.totalTime}
                 time={el.time}
                 key={el._id}
                 id={el._id}
+                isCompleted={el.isCompleted}
               />
             ))}
         </div>

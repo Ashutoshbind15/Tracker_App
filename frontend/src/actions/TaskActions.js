@@ -17,7 +17,10 @@ export const EditTask = (id, payload) => async (dispatch) => {
 };
 
 export const createTask = (pload) => async (dispatch) => {
-  const { data } = await axios.post("/tasks", pload);
+  const { data } = await axios.post("/tasks", {
+    ...pload,
+    totalTime: pload.time,
+  });
   dispatch(TaskActions.create(data));
 };
 
