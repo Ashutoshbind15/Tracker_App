@@ -22,6 +22,16 @@
   background-color: #31c119;
   border-radius: 10rem;
   text-align: center;
+  height: 2.8rem;
+  transition: all 0.2s;
+}
+
+.link:hover {
+  transform: translateY(-0.3rem);
+}
+
+.link:active {
+  transform: translateY(-0.1rem);
 }
 
 .tend {

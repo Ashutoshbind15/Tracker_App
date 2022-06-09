@@ -11,12 +11,20 @@
   width: 15rem;
   padding: 1.7rem 0;
   border-radius: 1.5rem;
+  background-color: #ca4224;
+  border: none;
+  color: white;
 }
 
 .type_btn:hover {
   cursor: pointer;
-  background-color: #ababab;
   color: white;
+  background-color: #b82b0c;
+  transform: translateY(-0.3rem);
+}
+
+.type_btn:active {
+  transform: translateY(-0.1rem);
 }
 
 .left {
@@ -43,4 +51,17 @@
 
 .form_control {
   padding: 2rem 0;
+}
+
+.form_control input {
+  width: 100%;
+  border: none;
+  color: #575454;
+  border-radius: 10rem;
+  height: 3.5rem;
+  padding: 1rem;
+}
+
+.form_control label {
+  margin-bottom: 0.6rem;
 }

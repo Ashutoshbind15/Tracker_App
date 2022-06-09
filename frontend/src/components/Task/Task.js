@@ -22,7 +22,7 @@ const Task = ({
       <div className={classes.tdetails}>
         <div>Name: {name}</div>
         <div>
-          {isCompleted ? "Time" : "Total Time"} {totalTime}
+          {isCompleted ? "Time" : "Total Time"} {totalTime} hrs
         </div>
       </div>
       <div className={classes.tdetails}>
@@ -30,7 +30,7 @@ const Task = ({
         <div>Priority: {priority}</div>
       </div>
       <div className={classes.tdetails}>
-        {!isCompleted && <div>Pomodoro : {time / ptime}</div>}
+        {!isCompleted && <div>Pomodoros : {time / ptime}</div>}
       </div>
       <hr />
       <div className={classes.tend}>

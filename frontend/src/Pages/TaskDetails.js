@@ -50,10 +50,10 @@ const TaskDetails = () => {
         <div>
           <div>
             <h2>{task.name}</h2>
-            <h3>{task.priority}</h3>
+            <h3>Priority : {task.priority}</h3>
           </div>
-          <h3>Total time: {task.totalTime}</h3>
-          {!task.isCompleted && <h3>Time left: {task.time}</h3>}
+          <h3>Total time: {task.totalTime} hrs</h3>
+          {!task.isCompleted && <h3>Time left: {task.time} hrs</h3>}
           {!task.isCompleted && (
             <div className={classes.pomo}>
               <div>Pomodoros: {task.time / ptime}</div>

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   tasks: [],
   task: null,
-  ptime: 0.02,
+  ptime: 0.5,
 };
 
 const TaskSlice = createSlice({
